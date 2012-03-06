@@ -1,0 +1,10 @@
+# Build folders.
+bin/
+obj
+csx
+/Site/bin
+/Site/obj
+
+# Other local files.
+*.suo
+*.user
