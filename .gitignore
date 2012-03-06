@@ -4,6 +4,7 @@ obj
 csx
 /Site/bin
 /Site/obj
+_Resharper.EmeraldAlien
 
 # Other local files.
 *.suo
