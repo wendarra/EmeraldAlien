@@ -9,3 +9,5 @@ _Resharper.EmeraldAlien
 # Other local files.
 *.suo
 *.user
+
+/Site/Site.Publish.xml
