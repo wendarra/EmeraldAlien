@@ -6,8 +6,8 @@ Ext.define('DemoApp.view.EmployeeListView', {
     xtype: 'employeelistview',
 
     config: {
-        title: 'Grid',
-        iconCls: 'star',
+        title: 'Emp List',
+        iconCls: 'maps',
         grouped: true,
 
         // Set the itemtpl to show the fields from the store.
