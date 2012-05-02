@@ -4,7 +4,7 @@
 Ext.define('DemoApp.controller.MainController', {
     extend: 'Ext.app.Controller',
 
-    views: ['HomeView', 'EmployeeListView', 'ContactUsView'],
+    views: ['HomeView', 'EmployeeListView', 'GridView', 'ContactUsView'],
 
     config: {
         refs: {

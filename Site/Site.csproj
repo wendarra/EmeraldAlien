@@ -57,11 +57,21 @@
     <Content Include="app\store\EmployeesStore.js" />
     <Content Include="app\view\ContactUsView.js" />
     <Content Include="app\view\EmployeeListView.js" />
+    <Content Include="app\view\GridView.js" />
     <Content Include="app\view\HomeView.js" />
     <Content Include="app\view\Viewport.js" />
     <Content Include="contact.aspx" />
     <Content Include="index.html" />
+    <Content Include="lib\Ext.ux.touch.grid\feature\Abstract.js" />
+    <Content Include="lib\Ext.ux.touch.grid\feature\Editable.js" />
+    <Content Include="lib\Ext.ux.touch.grid\feature\Feature.js" />
+    <Content Include="lib\Ext.ux.touch.grid\feature\Paging.js" />
+    <Content Include="lib\Ext.ux.touch.grid\feature\Sorter.js" />
+    <Content Include="lib\Ext.ux.touch.grid\View.js" />
     <Content Include="resources\css\app.css" />
+    <Content Include="resources\css\Ext.ux.grid.View.css" />
+    <Content Include="resources\images\sort_asc.gif" />
+    <Content Include="resources\images\sort_desc.gif" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

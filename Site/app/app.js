@@ -1,6 +1,15 @@
 Ext.Loader.setConfig({
-    enabled: true
+    enabled: true,
+    paths: {
+        'Ext.ux.touch.grid': './lib/Ext.ux.touch.grid'
+    }
 });
+
+Ext.require([
+    'Ext.ux.touch.grid.View',
+    'Ext.ux.touch.grid.feature.Feature',
+    'Ext.ux.touch.grid.feature.Sorter'
+]);
 
 /**
 * This simple demo shows the ability of Sencha Touch 2 to produce apps for phones and tablets.

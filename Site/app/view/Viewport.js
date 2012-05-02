@@ -18,6 +18,9 @@ Ext.define('DemoApp.view.Viewport', {
 			    xtype: 'employeelistview'
 			},
             {
+                xtype: 'gridview'
+            },
+            {
                 xtype: 'contactusview'
             }
 		]
