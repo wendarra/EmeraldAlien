@@ -5,7 +5,15 @@ Ext.define('DemoApp.model.EmployeeModel', {
     extend: 'Ext.data.Model',
 
     config: {
-        fields: ['firstName', 'middleInitial', 'lastName']
+        fields: [
+            { name: 'firstName',        type: 'string' },
+            { name: 'middleInitial',    type: 'string' },
+            { name: 'lastName',         type: 'string' },
+            { name: 'empCompulsory',    type: 'float' },
+            { name: 'salarySacrifice',  type: 'float' },
+            { name: 'memberVoluntary',  type: 'float' },
+            { name: 'showInGrid',       type: 'boolean' }
+        ],
     },
 
     fullName: function() {

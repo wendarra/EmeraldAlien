@@ -12,7 +12,7 @@ Ext.define('DemoApp.view.EmployeeListView', {
 
         // Set the itemtpl to show the fields from the store.
         itemTpl: '{firstName} {lastName}',
-        
+
         // Bind the store to this list.
         store: 'EmployeesStore',
 
@@ -23,11 +23,21 @@ Ext.define('DemoApp.view.EmployeeListView', {
         onItemDisclosure: function (record) {
             console.log(record);
             Ext.Msg.alert('Item Disclosure!', 'Disclosing ' + record.get('firstName') + ' ' + record.get('lastName'));
+            console.log("editEmployeeCommand");
+            this.fireEvent("editEmployeeCommand", this);
         },
 
         listeners: {
             select: function (view, record) {
                 Ext.Msg.alert('Selected!', 'You selected ' + record.get('firstName'));
+            }
+        },
+
+        listeners: {
+            show: function (list) {
+                var store = list.getStore();
+                store.clearFilter();
+                store.filter('showInGrid', false);
             }
         }
     }
