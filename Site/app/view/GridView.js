@@ -4,6 +4,7 @@
 Ext.define('DemoApp.view.GridView', {
     extend: 'Ext.ux.touch.grid.View',
     xtype: 'gridview',
+    id: 'employeegridview',
     requires: ['Ext.ux.touch.grid.View',
 			'Ext.ux.touch.grid.feature.Feature',
 			'Ext.ux.touch.grid.feature.Sorter'],
@@ -13,7 +14,7 @@ Ext.define('DemoApp.view.GridView', {
         iconCls: 'star',
         grouped: true,
 
-        store: 'EmployeesStore',
+        store: 'employeesStore',
 
         listeners: {
             show: function (list) {

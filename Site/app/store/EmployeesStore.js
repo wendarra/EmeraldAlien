@@ -3,14 +3,20 @@
 */
 Ext.define('DemoApp.store.EmployeesStore', {
     extend: 'Ext.data.Store',
-    storeId: 'employeesStore',
-    autoLoad: true,
+    requires: 'Ext.data.proxy.LocalStorage',
 
     config: {
+        storeId: 'employeesStore',
+        autoLoad: true,
         model: 'DemoApp.model.EmployeeModel',
         sorters: 'lastName',
         grouper : function(record) {
             return record.get('lastName')[0];
+        },
+
+        proxy: {
+            type: 'localstorage',
+            id: 'demo-app-localstorage'
         },
 
         data: [

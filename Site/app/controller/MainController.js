@@ -4,23 +4,23 @@
 Ext.define('DemoApp.controller.MainController', {
     extend: 'Ext.app.Controller',
 
-    views: ['HomeView', 'EmployeeListView', 'GridView', 'ContactUsView'],
+    views: ['Viewport', 'HomeView', 'EmployeeListView', 'GridView', 'ContactUsView'],
 
     config: {
         refs: {
-            // Lookup views by id.S
+            // Lookup views by id or xtype.
             contactForm: '#contactForm',
             employeeList: 'employeelistview',
-            grid: 'gridview'
+            tabPanel: '#viewportview',
+            grid: '#employeegridview'
         },
 
         control: {
             'button[action=submitContact]': {
                 tap: 'submitContactForm'
             },
-            employeeList: {
-                // The commands fired by the employee list.
-                editEmployeeCommand: "onEditEmployeeCommand"
+            '#employeeList': {
+                disclose: 'onDiscloseEvent'
             }
         }
     },
@@ -40,21 +40,23 @@ Ext.define('DemoApp.controller.MainController', {
         console.log(form);
     },
 
-    onEditEmployeeCommand: function () {
-        console.log("onEditEmployeeCommand");
-
-        var employeeList = this.getEmployeeList();
-        var currentEmployee = employeeList.getRecord();
+    onDiscloseEvent: function (list, record, target, index, event, eOpts) {
+        console.log('Disclose event fired.');
 
         // Update the current employee so that it shows in the grid.
-        currentEmployee.set("showInGrid", true);
+        record.set("showInGrid", true);
 
-        var employeesStore = Ext.getStore("EmployeesStore");
+        var employeesStore = list.getStore();
 
         employeesStore.sync();
         employeesStore.sort([{ property: 'lastName', direction: 'ASC'}]);
 
         this.activateGridView();
+    },
+
+    activateGridView: function () {
+        console.log('activateGridView');
+        this.getTabPanel().setActiveItem(this.getGrid(), { type: 'slide', direction: 'left' });
     }
 
 });

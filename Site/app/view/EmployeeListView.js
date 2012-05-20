@@ -4,6 +4,7 @@
 Ext.define('DemoApp.view.EmployeeListView', {
     extend: 'Ext.List',
     xtype: 'employeelistview',
+    id: 'employeeList',
 
     config: {
         title: 'Emp List',
@@ -14,7 +15,7 @@ Ext.define('DemoApp.view.EmployeeListView', {
         itemTpl: '{firstName} {lastName}',
 
         // Bind the store to this list.
-        store: 'EmployeesStore',
+        store: 'employeesStore',
 
         // Enable disclosure icons.
         disclosure: true,
@@ -22,9 +23,6 @@ Ext.define('DemoApp.view.EmployeeListView', {
         // Set the function for when a user taps on a disclsoure icon.
         onItemDisclosure: function (record) {
             console.log(record);
-            Ext.Msg.alert('Item Disclosure!', 'Disclosing ' + record.get('firstName') + ' ' + record.get('lastName'));
-            console.log("editEmployeeCommand");
-            this.fireEvent("editEmployeeCommand", this);
         },
 
         listeners: {

@@ -4,6 +4,7 @@
 Ext.define('DemoApp.view.Viewport', {
     extend: 'Ext.TabPanel',
     xtype: 'viewport',
+    id: 'viewportview',
     
     config: {
 
@@ -18,7 +19,7 @@ Ext.define('DemoApp.view.Viewport', {
 			    xtype: 'employeelistview'
 			},
             {
-                xtype: 'gridview'
+                xtype: 'gridview',
             },
             {
                 xtype: 'contactusview'

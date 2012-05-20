@@ -5,6 +5,7 @@ Ext.define('DemoApp.model.EmployeeModel', {
     extend: 'Ext.data.Model',
 
     config: {
+        identifier: 'uuid',
         fields: [
             { name: 'firstName',        type: 'string' },
             { name: 'middleInitial',    type: 'string' },
@@ -13,7 +14,7 @@ Ext.define('DemoApp.model.EmployeeModel', {
             { name: 'salarySacrifice',  type: 'float' },
             { name: 'memberVoluntary',  type: 'float' },
             { name: 'showInGrid',       type: 'boolean' }
-        ],
+        ]
     },
 
     fullName: function() {
