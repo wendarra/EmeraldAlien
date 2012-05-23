@@ -1,6 +1,12 @@
 /**
 * This is the grid page which lists the employees from the Employee store.
 */
+var renderCurrency = function (value) {
+    var color = (value > 0) ? '009933' : 'FF0000';
+    value = parseFloat(value); if (!isNaN(value)) value = value.toFixed(2); else value = '0.00';
+    return '<span style="color: #' + color + ';">' + value + '</span>';
+}
+
 Ext.define('DemoApp.view.GridView', {
     extend: 'Ext.ux.touch.grid.View',
     xtype: 'gridview',
@@ -41,9 +47,12 @@ Ext.define('DemoApp.view.GridView', {
                     {
                         header: 'Initial',
                         dataIndex: 'middleInitial',
-                        style: 'padding-left: 1em;',
+                        style: 'text-align: center;',
                         width: '5%',
-                        filter: { type: 'string' }
+                        filter: { type: 'string' },
+                        renderer: function (value, values) {
+                            return (value != null) ? value : '';
+                        }
                     },
                     {
                         header: 'Last Name',
@@ -55,35 +64,26 @@ Ext.define('DemoApp.view.GridView', {
 					{
 					    header: 'Emp Comp',
 					    dataIndex: 'empCompulsory',
-					    style: 'text-align: center;',
+					    style: 'text-align: right; padding-right: 1em;',
 					    width: '15%',
 					    filter: { type: 'numeric' },
-					    renderer: function (value, values) {
-					        var color = (value > 0) ? '009933' : 'FF0000';
-					        return '<span style="color: #' + color + ';">' + value + '</span>';
-					    }
+					    renderer: renderCurrency
 					},
                     {
                         header: 'Sal Sac',
                         dataIndex: 'salarySacrifice',
-                        cls: 'centered-cell',
+                        style: 'text-align: right; padding-right: 1em;',
                         width: '15%',
                         filter: { type: 'numeric' },
-                        renderer: function (value, values) {
-                            var color = (value > 0) ? '009933' : 'FF0000';
-                            return '<span style="color: #' + color + ';">' + value + '</span>';
-                        }
+                        renderer: renderCurrency
                     },
                     {
                         header: 'Mbr Vol',
                         dataIndex: 'memberVoluntary',
-                        style: 'text-align: center;',
+                        style: 'text-align: right; padding-right: 1em;',
                         width: '15%',
                         filter: { type: 'numeric' },
-                        renderer: function (value, values) {
-                            var color = (value > 0) ? '009933' : 'FF0000';
-                            return '<span style="color: #' + color + ';">' + value + '</span>';
-                        }
+                        renderer: renderCurrency
                     }
 				]
     }
